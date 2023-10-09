@@ -31,13 +31,6 @@ onMounted(() => {
   // intro.value = md.render(storeSettings.value.blogIntro);
 });
 
-defineComponent({
-  setup() {
-    return {
-      intro
-    };
-  }
-});
 </script>
 
 <style scoped>
