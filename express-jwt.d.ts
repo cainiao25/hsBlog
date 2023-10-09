@@ -1,1 +1,1 @@
-declare module 'express-jwt';
+declare module 'express-jwt'
