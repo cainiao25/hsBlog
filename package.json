@@ -15,7 +15,19 @@
     "nuxt": "^3.7.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "1.2.26",
+    "@fortawesome/free-brands-svg-icons": "5.12.0",
+    "@fortawesome/free-regular-svg-icons": "5.12.0",
+    "@fortawesome/free-solid-svg-icons": "5.12.0",
+    "@fortawesome/vue-fontawesome": "0.1.9",
+    "@nuxt/typescript-runtime": "0.3.8",
+    "@nuxtjs/auth": "4.8.5",
+    "@nuxtjs/axios": "5.9.3",
+    "@nuxtjs/pwa": "2.6.0",
     "@pinia/nuxt": "^0.4.11",
+    "markdown-it": "^10.0.0",
+    "markdown-it-github-headings": "^2.0.0",
+    "markdown-it-task-lists": "^2.1.1",
     "moment": "^2.29.4"
   }
 }

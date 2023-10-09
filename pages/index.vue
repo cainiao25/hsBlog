@@ -29,13 +29,13 @@ const page = ref(1);
 // const pageSize = ref(storeSettings.value.postPageSize);
 const alertShow = ref(false);
 const defaultRange = ref([moment().subtract(30, 'days'), moment()]);
-const rangeDate = ref({
+const rangeDate = {
   今天: [moment(), moment()],
   昨天: [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
   最近一周: [moment().subtract(7, 'days'), moment()],
   最近一个月: [moment().subtract(30, 'days'), moment()],
   最近一年: [moment().subtract(365, 'days'), moment()]
-});
+};
 
 // 设置响应式数据end
 
@@ -260,7 +260,7 @@ const selectLabel = (tag:string) => {
           <div class="post-top-right">
             <a-input-group compact>
               <a-select
-                v-model="filterType"
+                v-model="filterType.valueOf"
                 style="width: 75px"
                 @change="filterTypeChange"
               >
@@ -276,7 +276,7 @@ const selectLabel = (tag:string) => {
                 style="width: 250px"
                 :placeholder="searchPhd"
                 allow-clear
-                @keyup.enter="search"
+                @keyup.enter="search()"
               />
               <a-range-picker
                 v-if="filterType === 'date'"
@@ -284,10 +284,10 @@ const selectLabel = (tag:string) => {
                 v-model="inputDateMoment"
                 :disabled-date="disabledDate"
                 :ranges="rangeDate"
-                :default-picker-value="defaultRange"
+                :default-picker-value="defaultRange.value"
                 style="width: 250px"
               />
-              <a-button @click="search"> 搜索 </a-button>
+              <a-button @click="search()"> 搜索 </a-button>
             </a-input-group>
           </div>
         </div>
@@ -333,10 +333,11 @@ const selectLabel = (tag:string) => {
         </ul>
       </div>
       <div class="post-right">
-        <!-- <blog-intro v-if="settings.showBlogIntro" /> -->
-        <article-calendar @selectCalendar="selectCalendar" />
-        <pop-articles />
-        <pop-labels @selectLabel="selectLabel" />
+        <!-- v-if="settings.showBlogIntro" -->
+        <widgets-blog-intro  />
+        <widgets-article-calendar @selectCalendar="selectCalendar" />
+        <widgets-pop-articles />
+        <widgets-pop-labels @selectLabel="selectLabel" />
       </div>
     </div>
   </div>
