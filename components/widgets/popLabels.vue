@@ -31,12 +31,12 @@ const emit = getCurrentInstance()?.emit;
 const list = ref([]);
 const spinning = ref(false);
 const fetchLabels = async () => {
-  spinning.value = true;
-  const { code, data }: IResp = await $axios.$get("/api/popLabels");
-  if (code === 1) {
-    list.value = data.labels;
-  }
-  spinning.value = false;
+  // spinning.value = true;
+  // const { code, data }: IResp = await $axios.$get("/api/popLabels");
+  // if (code === 1) {
+  //   list.value = data.labels;
+  // }
+  // spinning.value = false;
 };
 onMounted(fetchLabels);
 const selectLabel = (label:any) => {

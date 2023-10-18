@@ -30,12 +30,12 @@ import { IResp } from "@/types";
 const list = ref<IPost[]>([]);
 const spinning = ref(false);
 const fetchArticles = async () => {
-  spinning.value = true;
-  const { code, data }: IResp = await $axios.$get("/api/popArticles");
-  if (code === 1) {
-    list.value = data.articles;
-  }
-  spinning.value = false;
+  // spinning.value = true;
+  // const { code, data }: IResp = await $axios.$get("/api/popArticles");
+  // if (code === 1) {
+  //   list.value = data.articles;
+  // }
+  // spinning.value = false;
 };
 onMounted(fetchArticles);
 const articleUrl = (item: IPost) => {

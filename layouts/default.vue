@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import zhCNN from 'ant-design-vue/lib/locale-provider/zh_CN';
+import zhCN from 'ant-design-vue/es/locale/zh_CN'
 // import LayoutFooter from '@/components/LayoutFooter.vue';
 import { ISetting } from '@/types/schema';
 import { reactive, toRefs, ref, computed } from 'vue'
@@ -9,7 +9,6 @@ import { reactive, toRefs, ref, computed } from 'vue'
 
     const year = ref(new Date().getFullYear());
     // const settings = ref(props.$store.state.settings as ISetting);
-    // const zhCN = ref(zhCNN);
     const showToTop = ref(false);
     const showMenu = ref(false);
 
@@ -47,7 +46,7 @@ import { reactive, toRefs, ref, computed } from 'vue'
 
 <template>
   <!-- :locale="zhCN" -->
-  <a-locale-provider >
+  <a-locale-provider :locale="zhCN" >
     <div class="container">
       <div class="darkmode-background"></div>
       <div class="darkmode-layer"></div>

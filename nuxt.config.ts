@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@ant-design-vue/nuxt'
+    '@ant-design-vue/nuxt',
   ],
 
   antd:{

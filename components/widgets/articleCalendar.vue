@@ -13,7 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, ref, getCurrentInstance } from 'vue';
+import zhCN from 'ant-design-vue/es/locale/zh_CN'
+import { ref, onMounted } from 'vue';
 import moment from 'moment';
 
 const dateMode = ref<'month' | 'year'>('month');
@@ -43,14 +44,4 @@ const selectDate = (date: moment.Moment): void => {
   emit?.('selectCalendar', inputDateMoment);
 };
 
-defineComponent({
-  setup() {
-    return {
-      dateMode,
-      disabledDate,
-      panelChange,
-      selectDate,
-    };
-  },
-});
 </script>
